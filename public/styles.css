@@ -52,3 +52,13 @@ button:hover {
 a {
     color: #5cfff4;
 }
+
+
+footer {
+    margin-top: 30px;
+    text-align: center;
+}
+
+#code {
+    color: grey;
+}
