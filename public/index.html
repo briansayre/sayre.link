@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>sayre.link</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet"> 
+</head>
+<body>
+  <header>
+    <h2>sayre.link</h2>
+  </header>
+  <h5>url shortener by brian sayre</h5>
+  <p> sayre.link/<span id="skey">key</span> -> <span id="surl">url</span> </p>
+  <main id="app">
+    <form class="form" v-if="formVisible" @submit.prevent="createUrl()">
+      <input class="input" type="text" v-model="key" name="key" id="key" placeholder="enter a key">
+      <br>
+      <input class="input" type="text" v-model="url" name="url" id="url" placeholder="enter a url">
+      <br>
+      <button type="submit" class="create">create</button>
+    </form>
+    <div v-if="created">
+      <br>
+      <p class="created">Your short url is: <a target="_blank" :href="created">{{created}}</a></p>
+      <a href="/">
+        go home
+      </a>
+    </div>
+
+    <div v-if="error" class="error">
+      {{error}}
+    </div>
+  </main>
+  <script src="https://unpkg.com/vue@2.6.11/dist/vue.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
